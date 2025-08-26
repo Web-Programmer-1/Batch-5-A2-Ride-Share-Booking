@@ -83,8 +83,7 @@ const Register = () => {
           onChange={(e) => setRole(e.target.value)}
         >
           <option value="rider">Rider</option>
-          <option value="driver">Driver</option>
-          <option value="admin">Admin</option>
+        
         </select>
 
         <button
