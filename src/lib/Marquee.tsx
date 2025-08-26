@@ -2,12 +2,11 @@
 
 import React, { useRef, useEffect, useCallback } from 'react';
 
-// Utility function to combine classNames
+
 function cn(...classes: (string | boolean | undefined | null)[]): string {
   return classes.filter(Boolean).join(' ');
 }
 
-// Hook to run animations using requestAnimationFrame
 const useAnimationFrame = (callback: (time: number, delta: number) => void) => {
   const requestRef = useRef<number | null>(null);
   const previousTimeRef = useRef<number | null>(null);

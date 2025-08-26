@@ -52,7 +52,7 @@ export default function MainLayout() {
           </p>
         </div>
 
-        <Marquee speed={40} pauseOnHover repeat={6}>
+        <Marquee speed={3} pauseOnHover repeat={4}>
           <div className="w-32 h-32 sm:w-36 sm:h-36 bg-white rounded-xl shadow-md border border-gray-200 flex items-center justify-center mx-4 p-4 hover:scale-105 transition-transform">
             <img src={img1} alt="Logo1" className="h-16 object-contain" />
           </div>
