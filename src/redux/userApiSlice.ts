@@ -7,7 +7,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://ride-booking-api.vercel.app",
+    baseUrl: "https://ride-booking-api.vercel.app/api/v1/user",
     
     credentials: "include", 
   }),
