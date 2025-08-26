@@ -49,9 +49,9 @@ const Marquee = ({
   reverse = false,
   pauseOnHover = false,
   children,
-  speed = 50,
+  speed = 10,
   vertical = false,
-  repeat = 4,
+  repeat = 3,
   ...props
 }: MarqueeProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
