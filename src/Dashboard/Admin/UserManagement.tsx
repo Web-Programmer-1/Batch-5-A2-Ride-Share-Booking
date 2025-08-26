@@ -1,122 +1,4 @@
-// // src/Dashboard/Admin/UserManagement.tsx
-// import { useState } from "react";
-// import {
-//   useGetAllUsersQuery,
-//   useBlockUserMutation,
-//   useApproveDriverMutation,
-// } from "../../redux/AdminApiSlice";
 
-// const UserManagement = () => {
-//   const [search, setSearch] = useState("");
-//   const [role, setRole] = useState("");
-
-//   const { data, isLoading } = useGetAllUsersQuery({ search, role });
-//   console.log(data, role,search)
-//   const [blockUser] = useBlockUserMutation();
-//   const [approveDriver] = useApproveDriverMutation();
-
-//   if (isLoading) return <p className="text-center mt-6">Loading users...</p>;
-
-//   return (
-//     <div className="p-6">
-//       <h2 className="text-2xl font-bold mb-4">User Management</h2>
-
-//       {/* Search + Filter */}
-//       <div className="flex gap-3 mb-4">
-//         <input
-//           type="text"
-//           placeholder="Search by name or email"
-//           value={search}
-//           onChange={(e) => setSearch(e.target.value)}
-//           className="border p-2 rounded w-1/2"
-//         />
-//         <select
-//           value={role}
-//           onChange={(e) => setRole(e.target.value)}
-//           className="border p-2 rounded"
-//         >
-//           <option value="">All Roles</option>
-//           <option value="rider">Rider</option>
-//           <option value="driver">Driver</option>
-//           <option value="admin">Admin</option>
-//         </select>
-//       </div>
-
-//       {/* User Table */}
-//       <table className="w-full border rounded shadow">
-//         <thead className="bg-gray-100">
-//           <tr>
-//             <th className="p-2 border">Name</th>
-//             <th className="p-2 border">Email</th>
-//             <th className="p-2 border">Role</th>
-//             <th className="p-2 border">Status</th>
-//             <th className="p-2 border">Actions</th>
-//           </tr>
-//         </thead>
-        
-//         <tbody>
-//   {data?.data?.map((u: any) => (
-//     <tr key={u._id} className="text-center">
-//       <td className="p-2 border">{u.name}</td>
-//       <td className="p-2 border">{u.email}</td>
-//       <td className="p-2 border">{u.role}</td>
-//       <td className="p-2 border">
-//         {u.role === "driver"
-//           ? u.approved
-//             ? "✅ Approved"
-//             : "❌ Pending"
-//           : u.isBlocked
-//           ? "🚫 Blocked"
-//           : "✅ Active"}
-//       </td>
-//       <td className="p-2 border flex gap-2 justify-center">
-//         {/* Block/Unblock */}
-//         <button
-//           onClick={() => blockUser(u._id)}
-//           className={`px-3 py-1 rounded ${
-//             u.isBlocked
-//               ? "bg-green-600 text-white"
-//               : "bg-red-600 text-white"
-//           }`}
-//         >
-//           {u.isBlocked ? "Unblock" : "Block"}
-//         </button>
-
-//         {/* Approve Driver */}
-//         {u.role === "driver" && (
-//           <button
-//             onClick={() => approveDriver(u._id)}
-//             className={`px-3 py-1 rounded ${
-//               u.approved
-//                 ? "bg-yellow-600 text-white"
-//                 : "bg-blue-600 text-white"
-//             }`}
-//           >
-//             {u.approved ? "Suspend" : "Approve"}
-//           </button>
-//         )}
-//       </td>
-//     </tr>
-//   ))}
-// </tbody>
-
-        
-//       </table>
-//     </div>
-//   );
-// };
-
-// export default UserManagement;
-
-
-
-
-
-
-
-
-
-// src/Dashboard/Admin/UserManagement.tsx
 import { useMemo, useState } from "react";
 import {
   useGetAllUsersQuery,
@@ -152,7 +34,9 @@ const UserManagement = () => {
   if (isLoading)
     return (
       <div className="p-6 max-w-7xl mx-auto">
-        <p className="text-center mt-8 text-gray-600">Loading users...</p>
+       <span className="loading loading-bars loading-xl"></span>
+
+        
       </div>
     );
 
