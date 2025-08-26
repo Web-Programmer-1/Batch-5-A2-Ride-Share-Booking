@@ -61,7 +61,7 @@ const Marquee = ({
   const animX = useRef<number>(0);
   const isPaused = useRef<boolean>(false);
 
-  useAnimationFrame((t, delta) => {
+  useAnimationFrame(( delta) => {
     if (!containerRef.current || !contentRef.current || !singleContentBlockRef.current) return;
 
     if (pauseOnHover && isPaused.current) return;

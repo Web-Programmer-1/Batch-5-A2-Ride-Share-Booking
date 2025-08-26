@@ -8,7 +8,7 @@ import { FaCarSide } from "react-icons/fa";
 import Accept from "./Accept";
 import UpdatedRideStatus from "./UpdatedRideStatus";
 import EarningsDashboard from "./Earnings";
-import RideHistory from "../../Ride_Dash/Ride_History";
+
 import DriverRideHistory from "./DriverRideHistory";
 import DriverAvailability from "../DriverAvilablity/DriverAvilablity";
 import DriverProfile from "./DriverProfile";

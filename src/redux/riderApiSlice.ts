@@ -2,11 +2,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 
-const getCsrfToken = () => {
-  if (typeof document === "undefined") return "";
-  const match = document.cookie.match(/(?:^|;\s*)csrf-token=([^;]+)/);
-  return match ? decodeURIComponent(match[1]) : "";
-};
 
 
 export interface RideRequestPayload {
@@ -32,11 +27,7 @@ export interface ApiResponse<T> {
   total:number;
 }
 
-type RideHistoryResponse = {
-  success: boolean;
-  total: number;
-  data: Ride[];
-};
+
 
 export const rideApi = createApi({
   reducerPath: "rideApi",

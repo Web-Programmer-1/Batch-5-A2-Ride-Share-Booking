@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel, { } from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { MapPin, Navigation, Clock, BadgeCheck, ChevronLeft, ChevronRight } from "lucide-react";
+import { MapPin, Navigation, Clock, BadgeCheck} from "lucide-react";
 import type { EmblaOptionsType } from "embla-carousel";
 
 // ---------- Types ----------
@@ -161,8 +161,6 @@ export default function RideRequestsCarousel({
     onSelect();
   }, [emblaApi, onSelect]);
 
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
   const scrollTo = useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
 
   return (
@@ -211,13 +209,6 @@ export default function RideRequestsCarousel({
 
   );
 }
-
-// ---------- Usage notes ----------
-// 1) Install deps:
-//    npm i embla-carousel-react embla-carousel @types/embla-carousel__react lucide-react
-// 2) Place <RideRequestsCarousel className="mt-10" rides={yourRides} />
-//    right under the Hero section in your MainLayout/Home page.
-// 3) The component is fully responsive and loops infinitely with autoplay.
 
 
 
