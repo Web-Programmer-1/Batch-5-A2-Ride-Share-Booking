@@ -33,7 +33,7 @@ const RideOversightFilter = () => {
         <table className="w-full border rounded shadow">
           <thead className="bg-gray-100">
             <tr>
-              <th className="p-2 border">Date</th>
+              <th className="p-2 border">Date.</th>
               <th className="p-2 border">Status</th>
               <th className="p-2 border">Driver</th>
               <th className="p-2 border">Rider</th>
